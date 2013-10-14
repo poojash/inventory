@@ -31,35 +31,35 @@
 	<h2>Add A New Product To Inventory</h2>
     <form name="inventory" ng-submit="submit()">
 		
-        <ul>
-			<li>
+        
+			<p>
 				<label class="grid2">Product Name</label>
 				<input name="product" type="text" ng-model="product" required>
 				<span ng-show="inventory.product.$error.required">Please Enter Product Name</span>
-			</li>
-			<li>
+			</p>
+			<p>
 				<label class="grid2">Category</label>
 				<select ng-model="category" ng-options="c.name for c in categories"></select>
 				
-			</li>
-			<li>
+			</p>
+			<p>
 				<label class="grid2">Rate</label>
 				<input name="rate" type="number" ng-model="rate" required min=0>
 				<span ng-show="inventory.rate.$error.required">Please Enter Price</span>
 				<span ng-show="inventory.rate.$error.min">Please Enter Valid Price</span>
 				
-			</li>
-			<li>
+			</p>
+			<p>
 				<label class="grid2">Description</label>
 				<textarea name="description" ng-model="description" required></textarea>
 				<span ng-show="inventory.description.$error.required">Please Enter Description</span>
 				
-			</li>
-			<li>
+			</p>
+			<p>
 				
 				<input class="submit" type="submit" id="submit" value="Submit" />
-			</li>  
-        </ul>
+			</p>  
+        
        
     </form>
 	</div>
