@@ -1,6 +1,8 @@
 $form:rgb(61,174,168);
+$error:rgb(161,21,23);
+
 form{
-	width:90%;
+	width:60%;
 	margin:10px auto;
 	border:2px solid white;
 	background:$form;
@@ -9,32 +11,31 @@ form{
 	
 	@include box-shadow(black 1px 1px 15px);
 	
-	ul{
-		width:70%;
-		
-		
-		margin:0px;
-		padding:0px;
-		list-style-type:none;
-		margin:0 auto;
-		padding:0.8em;
-		overflow:hidden;
-		
-	}
-	li{
-		padding:0.5em;
-		float:left;
-		
+	label{
+		font-size:1.1em;
+		color:white;
 	}
 	
-	input,textarea{
+	input,select{
 		width:17em;
+		height:2em;
 	}
 	
+	textarea{
+		width:17em;
+		height:5em;
+	}
 	.submit{
+		margin-left:40%;	
 		padding:3px;
 		width:5em;
 	}
+	
+	span{
+		color:$error;
+	}
+	
+	
 	
 }
 
