@@ -1,0 +1,38 @@
+$tableHeader:rgb(61,174,168);
+$evenRow:rgb(231,233,158);
+$oddrow:rgb(240,255,224);
+.inventory{
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+	border:1px solid #000000;
+	@include border-radius();
+	
+	@include box-shadow(black 1px 1px 15px);
+	
+	td{
+		text-align:center;
+		padding:0.5em;
+		font-size:1em;
+	}
+	tr{
+		
+		&:nth-child(even){
+			background-color:$evenRow;
+		}
+		
+		&:nth-child(even){
+			background-color:$oddrow;
+		}
+	}
+	
+	th{
+		background-color:$tableHeader;
+		color:white;
+		padding:0.8em;
+		font-size:1.2em;
+	}
+	
+	
+	
+}

@@ -1,0 +1,60 @@
+@mixin grid($width,$coloumns,$gutter){
+
+	$coloumn_width:$width/$coloumns;
+	.container{
+		margin-left:auto;
+		margin-right:auto;
+		width:$width;
+		overflow:hidden;
+	}
+	
+	.grid{
+		
+		float:left;
+		margin-left:$gutter/2;
+		margin-right:$gutter/2
+	}
+	
+	.position{
+		position:relative;
+	}
+	
+	.alpha{
+		margin-left:0px;
+	}
+	
+	.omega{
+		margin-right:0px;
+	}
+	
+	@for $i from 1 through $coloumns{
+		.grid#{$i}{
+			@extend .grid;
+			width:$i* $coloumn_width - $gutter;
+		}
+		
+		.pull_left#{$i}{
+			@extend .position;
+			left:-$i* $coloumn_width;
+		}
+		
+		.pull_right#{$i}{
+			@extend .position;
+			left:$i* $coloumn_width ;
+		}
+		
+		.suffix#{$i}{
+			
+			padding-right:$i* $coloumn_width;
+		}
+		
+		.prefix#{$i}{
+			
+			padding-left:$i* $coloumn_width;
+		}
+		
+		
+	}
+
+
+}

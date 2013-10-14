@@ -1,0 +1,67 @@
+<!doctype html>
+<html ng-app>
+  <head>
+  	<link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script type="application/javascript" src="javascripts/main.js"></script>
+  </head>
+  <body>
+	<div ng-controller="formCtrl" class="container">
+	<h1>Inventory</h1>
+	
+	<table class="inventory">
+		<tr>
+			<th>Product</th>
+			<th>Rate</th>
+			<th>Category</th>
+			<th>Description</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+		<tr ng-repeat="li in list">
+			<td>{{li.product}}</td>
+			<td>{{li.rate}}</td>
+			<td>{{li.category}}</td>
+			<td>{{li.description}}</td>
+			<td ng-click="edit($index)">Edit</td>
+			<td ng-click="delete($index)">X</td>
+		</tr>
+	</table>
+	
+	<h2>Add A New Product To Inventory</h2>
+    <form name="inventory" ng-submit="submit()">
+		
+        <ul>
+			<li>
+				<label class="grid2">Product Name</label>
+				<input name="product" type="text" ng-model="product" required>
+				<span ng-show="inventory.product.$error.required">Please Enter Product Name</span>
+			</li>
+			<li>
+				<label class="grid2">Category</label>
+				<select ng-model="category" ng-options="c.name for c in categories"></select>
+				
+			</li>
+			<li>
+				<label class="grid2">Rate</label>
+				<input name="rate" type="number" ng-model="rate" required min=0>
+				<span ng-show="inventory.rate.$error.required">Please Enter Price</span>
+				<span ng-show="inventory.rate.$error.min">Please Enter Valid Price</span>
+				
+			</li>
+			<li>
+				<label class="grid2">Description</label>
+				<textarea name="description" ng-model="description" required></textarea>
+				<span ng-show="inventory.description.$error.required">Please Enter Description</span>
+				
+			</li>
+			<li>
+				
+				<input class="pull_right3 submit" type="submit" id="submit" value="Submit" />
+			</li>  
+        </ul>
+       
+    </form>
+	</div>
+  </body>
+</html>
